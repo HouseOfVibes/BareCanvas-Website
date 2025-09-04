@@ -1,0 +1,23 @@
+---
+const { url } = Astro.props;
+const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+---
+
+<a href={shareUrl} target="_blank" rel="noopener noreferrer">
+  Share on Facebook
+</a>
+
+<style>
+  a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #1877f2; /* Facebook Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  a:hover {
+    background-color: #166fe5;
+  }
+</style>

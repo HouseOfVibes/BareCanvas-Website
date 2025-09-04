@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import ShareToFacebook from '../../components/ShareToFacebook.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": entry.data.title,
+  "image": entry.data.image.url,
+  "author": {
+    "@type": "Person",
+    "name": entry.data.author
+  },
+  "datePublished": entry.data.pubDate.toISOString(),
+  "description": entry.data.description
+};
+---
+
+<Layout 
+  title={entry.data.title} 
+  description={entry.data.description}
+  image={entry.data.image.url}
+  author={entry.data.author}
+  type="article"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <main>
+    <h1>{entry.data.title}</h1>
+    <p>By {entry.data.author} on {entry.data.pubDate.toDateString()}</p>
+    <img src={entry.data.image.url} alt={entry.data.image.alt} />
+    <Content />
+    <br />
+    <ShareToFacebook url={Astro.url.href} />
+  </main>
+</Layout>

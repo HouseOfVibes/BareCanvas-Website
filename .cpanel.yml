@@ -1,0 +1,23 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/username/public_html/
+    - export REPOPATH=/home/username/repositories/BareCanvas-Website
+    - export NODEPATH=/home/username/nodevenv/public_html/18/bin
+    - export PATH=$NODEPATH:$PATH
+    - cd $REPOPATH
+    - echo "Installing dependencies..."
+    - npm ci --production=false
+    - echo "Building Astro site..."
+    - npm run build
+    - echo "Deploying to public_html..."
+    - /bin/cp -R dist/* $DEPLOYPATH
+    - echo "Cleaning up..."
+    - /bin/find $DEPLOYPATH -name "node_modules" -exec rm -rf {} + 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -name ".git*" -exec rm -rf {} + 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -name ".cpanel.yml" -delete 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -name "src" -exec rm -rf {} + 2>/dev/null || true
+    - echo "Setting permissions..."
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -type f -exec chmod 644 {} \;
+    - echo "Deployment complete!"

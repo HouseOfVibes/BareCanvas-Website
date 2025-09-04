@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bare Canvas - Brand Color Palette</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #4a3528;
+            background-color: #faf9f7;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .palette-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .palette-header h1 {
+            font-size: 42px;
+            color: #4a3528;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .palette-header p {
+            font-size: 18px;
+            color: #6b4e3d;
+            font-style: italic;
+        }
+        
+        .color-section {
+            margin-bottom: 50px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            color: #4a3528;
+            margin-bottom: 25px;
+            font-weight: 600;
+            border-bottom: 2px solid #e8ddd4;
+            padding-bottom: 10px;
+        }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .color-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(74, 53, 40, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .color-swatch {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        .color-info {
+            padding: 20px;
+        }
+        
+        .color-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4a3528;
+            margin-bottom: 8px;
+        }
+        
+        .color-hex {
+            font-size: 16px;
+            color: #6b4e3d;
+            font-family: 'Courier New', monospace;
+            background: #f7f3ed;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .color-usage {
+            font-size: 14px;
+            color: #6b4e3d;
+            line-height: 1.5;
+        }
+        
+        /* Color-specific text colors for readability */
+        .light-text { color: white !important; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        .dark-text { color: #4a3528 !important; text-shadow: none; }
+        
+        /* Usage Examples Section */
+        .usage-examples {
+            margin-top: 50px;
+            background: #f7f3ed;
+            padding: 40px;
+            border-radius: 15px;
+        }
+        
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .usage-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #c4a373;
+        }
+        
+        .usage-item h4 {
+            color: #4a3528;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .usage-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .usage-item li {
+            color: #6b4e3d;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .usage-item li:before {
+            content: "•";
+            color: #c4a373;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .palette-header h1 {
+                font-size: 32px;
+            }
+            
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="palette-header">
+            <h1>BARE CANVAS</h1>
+            <p>Brand Color Palette - Warm, Elegant, Professional</p>
+        </div>
+        
+        <!-- Primary Colors -->
+        <div class="color-section">
+            <h2 class="section-title">Primary Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch light-text" style="background-color: #4a3528;">
+                        Deep Brown
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Brown</div>
+                        <div class="color-hex">#4a3528</div>
+                        <div class="color-usage">Main text, buttons, strong headings, footer background</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch light-text" style="background-color: #6b4e3d;">
+                        Warm Brown
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Brown</div>
+                        <div class="color-hex">#6b4e3d</div>
+                        <div class="color-usage">Secondary text, logo text, navigation links</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #c4a373;">
+                        Muted Gold
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Muted Gold</div>
+                        <div class="color-hex">#c4a373</div>
+                        <div class="color-usage">Premium accents, hover states, special highlights</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Background Colors -->
+        <div class="color-section">
+            <h2 class="section-title">Background Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #faf9f7;">
+                        Warm Cream
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Cream</div>
+                        <div class="color-hex">#faf9f7</div>
+                        <div class="color-usage">Main website background, body background</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #f7f3ed;">
+                        Light Beige
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Light Beige</div>
+                        <div class="color-hex">#f7f3ed</div>
+                        <div class="color-usage">Section backgrounds, header background</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #f2ebe3;">
+                        Soft Beige
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Soft Beige</div>
+                        <div class="color-hex">#f2ebe3</div>
+                        <div class="color-usage">Contact section, cards, subtle backgrounds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Supporting Colors -->
+        <div class="color-section">
+            <h2 class="section-title">Supporting Colors</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #f5f1ed;">
+                        Cream Accents
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Cream Accents</div>
+                        <div class="color-hex">#f5f1ed</div>
+                        <div class="color-usage">Service cards, hover effects, light elements</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #e8ddd4;">
+                        Warm Stone
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Stone</div>
+                        <div class="color-hex">#e8ddd4</div>
+                        <div class="color-usage">Borders, dividers, subtle accents, icon backgrounds</div>
+                    </div>
+                </div>
+                
+                <div class="color-card">
+                    <div class="color-swatch dark-text" style="background-color: #d4c4b0;">
+                        Logo Beige
+                    </div>
+                    <div class="color-info">
+                        <div class="color-name">Logo Beige</div>
+                        <div class="color-hex">#d4c4b0</div>
+                        <div class="color-usage">Matches logo background, special sections</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Usage Examples -->
+        <div class="usage-examples">
+            <h2 class="section-title">Color Usage Guidelines</h2>
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <h4>Text & Typography</h4>
+                    <ul>
+                        <li>Headings: Deep Brown (#4a3528)</li>
+                        <li>Body text: Warm Brown (#6b4e3d)</li>
+                        <li>Links: Warm Brown with Gold hover</li>
+                        <li>Buttons: Deep Brown background</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-item">
+                    <h4>Backgrounds</h4>
+                    <ul>
+                        <li>Main: Warm Cream (#faf9f7)</li>
+                        <li>Sections: Light Beige (#f7f3ed)</li>
+                        <li>Cards: Cream Accents (#f5f1ed)</li>
+                        <li>Contact: Soft Beige (#f2ebe3)</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-item">
+                    <h4>Accents & Details</h4>
+                    <ul>
+                        <li>Premium touches: Muted Gold (#c4a373)</li>
+                        <li>Borders: Warm Stone (#e8ddd4)</li>
+                        <li>Icons: Gold or Deep Brown</li>
+                        <li>Hover states: Gold accents</li>
+                    </ul>
+                </div>
+                
+                <div class="usage-item">
+                    <h4>Brand Consistency</h4>
+                    <ul>
+                        <li>Logo matches: Logo Beige (#d4c4b0)</li>
+                        <li>Warm, sophisticated feel</li>
+                        <li>Professional yet approachable</li>
+                        <li>Spa-like elegant aesthetic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bare Canvas - Premier Body Waxing Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #4a3728;
+            background-color: #faf9f7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #f5f3f0;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(139, 118, 96, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #8b7660;
+            letter-spacing: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #4a3728;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #8b7660;
+        }
+        
+        .book-btn {
+            background-color: #a0896c;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .book-btn:hover {
+            background-color: #8b7660;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(160, 137, 108, 0.3), rgba(160, 137, 108, 0.3)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23e8ddd4" width="1200" height="600"/><text x="600" y="280" text-anchor="middle" font-family="serif" font-size="24" fill="%238b7660">Elegant Spa Treatment Room</text><text x="600" y="320" text-anchor="middle" font-family="serif" font-size="16" fill="%234a3728">Clean lines, warm lighting, professional atmosphere</text></svg>');
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+        
+        .cta-button {
+            background-color: #8b7660;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background-color: #4a3728;
+            transform: translateY(-2px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: #faf9f7;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 36px;
+            color: #4a3728;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .about-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #6d5a47;
+        }
+        
+        .about-image {
+            background-color: #e8ddd4;
+            height: 350px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b7660;
+            font-size: 18px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #f5f3f0;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #4a3728;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(139, 118, 96, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            color: #4a3728;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #6d5a47;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .service-price {
+            font-size: 20px;
+            color: #8b7660;
+            font-weight: bold;
+        }
+        
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 0;
+            background-color: #faf9f7;
+        }
+        
+        .why-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .why-choose h2 {
+            font-size: 36px;
+            color: #4a3728;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #a0896c;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature h3 {
+            font-size: 20px;
+            color: #4a3728;
+            margin-bottom: 15px;
+        }
+        
+        .feature p {
+            color: #6d5a47;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #e8ddd4;
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            color: #4a3728;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .contact p {
+            font-size: 18px;
+            color: #6d5a47;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            color: #4a3728;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item p {
+            color: #6d5a47;
+            margin-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2d1f15;
+            color: #e8ddd4;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">BARE CANVAS</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="book-btn">Book Appointment</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>BARE CANVAS</h1>
+            <p>Professional body waxing services in an elegant, comfortable environment. Experience the difference of expert care and premium quality.</p>
+            <button class="cta-button">Book Your Session</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text scroll-animate">
+                    <h2>Expert Esthetician Services</h2>
+                    <p>At Bare Canvas, we believe in providing a luxurious and professional waxing experience. Our skilled estheticians use premium products and techniques to ensure your comfort while delivering exceptional results.</p>
+                    <p>We create a welcoming, judgment-free environment where you can relax and trust in our expertise. Every service is tailored to your individual needs and comfort level.</p>
+                </div>
+                <div class="about-image scroll-animate">
+                    Professional Spa Environment<br>
+                    Clean & Comfortable Treatment Rooms
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="why-content">
+                <h2 class="scroll-animate">Why Choose Bare Canvas</h2>
+                <div class="features">
+                    <div class="feature scroll-animate">
+                        <div class="feature-icon">★</div>
+                        <h3>Premium Products</h3>
+                        <p>We use only the highest quality waxes and skin care products for optimal results and comfort.</p>
+                    </div>
+                    <div class="feature scroll-animate">
+                        <div class="feature-icon">♦</div>
+                        <h3>Expert Technique</h3>
+                        <p>Our licensed estheticians are trained in the latest techniques for efficient, comfortable waxing.</p>
+                    </div>
+                    <div class="feature scroll-animate">
+                        <div class="feature-icon">◆</div>
+                        <h3>Hygienic Environment</h3>
+                        <p>Strict sanitation protocols and individual, private treatment rooms ensure your safety and comfort.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="scroll-animate">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card slide-in-left">
+                    <h3>Brazilian Waxing</h3>
+                    <p>Complete bikini area waxing with attention to comfort and precision. Professional, discreet service.</p>
+                    <div class="service-price">Starting at $65</div>
+                </div>
+                <div class="service-card slide-in-right">
+                    <h3>Full Body Waxing</h3>
+                    <p>Comprehensive waxing services for legs, arms, and body areas using premium quality wax.</p>
+                    <div class="service-price">Starting at $45</div>
+                </div>
+                <div class="service-card slide-in-left">
+                    <h3>Facial Waxing</h3>
+                    <p>Eyebrow shaping, upper lip, and facial hair removal with gentle, skin-safe techniques.</p>
+                    <div class="service-price">Starting at $25</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content scroll-animate">
+                <h2>Schedule Your Appointment</h2>
+                <p>Ready to experience professional waxing services in a comfortable, elegant setting? Contact us to book your appointment or ask any questions.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p>hello@barecanvaswaxing.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Location</h3>
+                        <p>Pearland, Texas</p>
+                    </div>
+                </div>
+                
+                <button class="cta-button">Book Online</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Bare Canvas. Professional Esthetician Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll animations on page load and scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-animate elements
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Observe slide-in elements
+        document.querySelectorAll('.slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for hero background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Smooth page transitions
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
