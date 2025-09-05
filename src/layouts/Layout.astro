@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import CookieConsent from '../components/CookieConsent.astro';
 const { title, description, image, author, type } = Astro.props;
 ---
 
@@ -40,6 +41,7 @@ const { title, description, image, author, type } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <CookieConsent />
     
     <script>
       // Smooth scroll animations
