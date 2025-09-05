@@ -1,0 +1,883 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Professional Waxing Services & Pricing | BareCanvas"
+  description="Comprehensive waxing services in Pearland, TX. Brazilian, bikini, facial, and body waxing with transparent pricing. Professional esthetician services."
+>
+  <!-- Services Hero -->
+  <section class="services-hero">
+    <div class="container">
+      <h1 class="animate-on-scroll fade-up">Professional Waxing Services</h1>
+      <p class="hero-subtitle animate-on-scroll fade-up">Complete service menu with transparent pricing and professional care</p>
+    </div>
+  </section>
+
+  <!-- Services Navigation -->
+  <section class="services-nav">
+    <div class="container">
+      <div class="service-categories">
+        <a href="#body-waxing" class="category-link">Body Waxing</a>
+        <a href="#facial-waxing" class="category-link">Facial Waxing</a>
+        <a href="#specialized-brows" class="category-link">Specialized Brows</a>
+        <a href="#products" class="category-link">Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body Waxing Services -->
+  <section id="body-waxing" class="section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Body Waxing Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Professional body waxing from intimate areas to full body coverage</p>
+      
+      <!-- Popular Body Services (Always Visible) -->
+      <div class="popular-services">
+        <h3 class="category-subtitle">Popular Services</h3>
+        <div class="services-grid grid-3">
+          <div class="service-card featured animate-on-scroll fade-up">
+            <div class="service-header">
+              <h4>Brazilian (Women Only)</h4>
+              <div class="service-price">$62</div>
+            </div>
+            <div class="service-details">
+              <p>Complete customization from full removal to partial shaping. 30-45 minutes.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+            <div class="service-header">
+              <h4>Bikini Full</h4>
+              <div class="service-price">$51</div>
+            </div>
+            <div class="service-details">
+              <p>Comprehensive front area coverage with customizable options. 20-30 minutes.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+            <div class="service-header">
+              <h4>Full Legs</h4>
+              <div class="service-price">$80</div>
+            </div>
+            <div class="service-details">
+              <p>Complete hip-to-toe coverage including inner thighs and feet. 45-60 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Body Services -->
+      <div class="expandable-services">
+        <button class="expand-btn" onclick="toggleServices('body-services')">
+          <span>View All 22+ Body Waxing Services</span>
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        
+        <div id="body-services" class="expanded-services" style="display: none;">
+          <div class="services-grid grid-4">
+            <!-- Intimate Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Bikini Line</h4>
+                <div class="service-price">$44</div>
+              </div>
+              <div class="service-details">
+                <p>Essential maintenance with 4-finger width coverage. Perfect for first-time clients.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Butt</h4>
+                <div class="service-price">$30</div>
+              </div>
+              <div class="service-details">
+                <p>Complete buttock area hair removal including central strip and outer cheeks.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Butt Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Targeted central strip area between buttocks. Quick 10-15 minute service.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Inner Thigh</h4>
+                <div class="service-price">$20</div>
+              </div>
+              <div class="service-details">
+                <p>Hair removal extending from bikini line toward inner leg area.</p>
+              </div>
+            </div>
+
+            <!-- Arm Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Arms</h4>
+                <div class="service-price">$50</div>
+              </div>
+              <div class="service-details">
+                <p>Complete arm coverage from shoulder to fingertips. 30-40 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Half Arms</h4>
+                <div class="service-price">$32</div>
+              </div>
+              <div class="service-details">
+                <p>Upper or lower arm treatment. Choose based on hair growth patterns.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Underarms</h4>
+                <div class="service-price">$22</div>
+              </div>
+              <div class="service-details">
+                <p>Complete underarm hair removal. Results last 3-4 weeks. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Leg Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Half Legs</h4>
+                <div class="service-price">$42</div>
+              </div>
+              <div class="service-details">
+                <p>Upper legs (hip to knee) or lower legs (knee to toe). 25-35 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Back of Upper Leg</h4>
+                <div class="service-price">$20</div>
+              </div>
+              <div class="service-details">
+                <p>Posterior thigh area often visible in swimwear and shorter clothing.</p>
+              </div>
+            </div>
+
+            <!-- Chest & Torso -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Chest</h4>
+                <div class="service-price">$35</div>
+              </div>
+              <div class="service-details">
+                <p>Complete chest hair removal from collar bone to upper abdomen. 20-30 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Chest Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Central chest area hair removal without full chest treatment. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Nipples</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized service for nipple area hair using gentle techniques.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Stomach</h4>
+                <div class="service-price">$35</div>
+              </div>
+              <div class="service-details">
+                <p>Complete abdominal hair removal from chest to waistline. 20-25 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Stomach Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Central stomach area from underwear line to belly button. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Back Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Back</h4>
+                <div class="service-price">$55</div>
+              </div>
+              <div class="service-details">
+                <p>Complete back coverage from shoulders to waistline. 30-40 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Lower Back</h4>
+                <div class="service-price">$24</div>
+              </div>
+              <div class="service-details">
+                <p>Lower third of back area where hair growth is most concentrated.</p>
+              </div>
+            </div>
+
+            <!-- Hands & Feet -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Hands</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Professional hand and finger hair removal for smooth appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Toes</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Foot and individual toe hair removal. Perfect for sandal season.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facial Waxing Services -->
+  <section id="facial-waxing" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Facial Waxing Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Precise facial hair removal for a polished, refined appearance</p>
+      
+      <!-- Popular Facial Services -->
+      <div class="popular-services">
+        <h3 class="category-subtitle">Popular Services</h3>
+        <div class="services-grid grid-3">
+          <div class="service-card featured animate-on-scroll fade-up">
+            <div class="service-header">
+              <h4>Full Face</h4>
+              <div class="service-price">$60</div>
+            </div>
+            <div class="service-details">
+              <p>Complete facial hair management in a single appointment. 45-60 minutes.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+            <div class="service-header">
+              <h4>Eyebrows</h4>
+              <div class="service-price">$20</div>
+            </div>
+            <div class="service-details">
+              <p>Professional shaping with wax, trim, and tweeze. Face shape consultation included.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+            <div class="service-header">
+              <h4>Upper Lip</h4>
+              <div class="service-price">$10</div>
+            </div>
+            <div class="service-details">
+              <p>Quick upper lip hair removal. Results last 3-4 weeks. 5-10 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Facial Services -->
+      <div class="expandable-services">
+        <button class="expand-btn" onclick="toggleServices('facial-services')">
+          <span>View All 12+ Facial Waxing Services</span>
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        
+        <div id="facial-services" class="expanded-services" style="display: none;">
+          <div class="services-grid grid-4">
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Lower Lip</h4>
+                <div class="service-price">$10</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized lower lip and surrounding area hair removal.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Cheeks</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Full cheek area from hairline to jawline for smooth appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Nose</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Careful nasal hair removal using specialized techniques and tools.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Chin</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Professional chin hair removal for smooth, confident results.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Sideburns</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Precise sideburn shaping for polished, well-groomed appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Hairline</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Forehead hairline cleanup for clean, defined boundary.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Neck</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Front and back neck area hair removal for complete grooming.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Ears</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized ear hair removal using safe, gentle techniques.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Brow Services -->
+  <section id="specialized-brows" class="section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Specialized Brow Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Advanced eyebrow treatments for enhanced shape and color</p>
+      
+      <div class="services-grid grid-2">
+        <div class="service-card featured animate-on-scroll fade-left">
+          <div class="service-header">
+            <h4>Brow Wax + Lamination & Tint</h4>
+            <div class="service-price">$90</div>
+          </div>
+          <div class="service-details">
+            <p>Transformative chemical process that straightens, lifts and sets brow hairs for a fuller, polished look. Includes waxing, lamination (4-8 weeks), and tint (4-6 weeks).</p>
+          </div>
+        </div>
+
+        <div class="service-card animate-on-scroll fade-right">
+          <div class="service-header">
+            <h4>Brow Wax + Tint</h4>
+            <div class="service-price">$45</div>
+          </div>
+          <div class="service-details">
+            <p>Enhanced eyebrow shaping and color service. Professional waxing combined with tint that lasts 4-6 weeks for defined, fuller-looking brows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Products -->
+  <section id="products" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Professional Aftercare Products</h2>
+      <p class="section-intro animate-on-scroll fade-up">Premium skincare products to maintain and enhance your results</p>
+      
+      <div class="services-grid grid-4">
+        <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
+          <div class="product-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="var(--muted-gold)" stroke-width="2"/>
+              <circle cx="25" cy="25" r="12" fill="var(--cream-accents)"/>
+            </svg>
+          </div>
+          <h3>Pre-Waxing Oil</h3>
+          <p class="product-brand">Waxing Lovely's</p>
+          <p>Protective oil with calendula extract and organic grape seed oil for ultra-soothing preparation.</p>
+        </div>
+
+        <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
+          <div class="product-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="15" width="30" height="25" rx="5" stroke="var(--muted-gold)" stroke-width="2"/>
+              <circle cx="25" cy="27" r="8" fill="var(--cream-accents)"/>
+            </svg>
+          </div>
+          <h3>Ingrown Prevention</h3>
+          <p class="product-brand">Zandiland Beauty</p>
+          <p>Professional scrubs and moisturizers including OG Deck Scrub and Deck Polish.</p>
+        </div>
+
+        <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
+          <div class="product-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 35 Q25 15 35 35" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
+              <circle cx="25" cy="20" r="5" fill="var(--cream-accents)"/>
+            </svg>
+          </div>
+          <h3>Ingrown Spray</h3>
+          <p class="product-brand">Agent 88</p>
+          <p>Treatment spray with salicylic and lactic acid for ingrown hairs and body acne.</p>
+        </div>
+
+        <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.4s;">
+          <div class="product-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="15" y="10" width="20" height="30" rx="3" stroke="var(--muted-gold)" stroke-width="2"/>
+              <circle cx="25" cy="25" r="6" fill="var(--cream-accents)"/>
+            </svg>
+          </div>
+          <h3>Clarifying Pads</h3>
+          <p class="product-brand">Skin Script</p>
+          <p>Professional-grade pads with 2% glycolic acid, 2% salicylic acid, and tea tree oil.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking CTA -->
+  <section class="section section-accent">
+    <div class="container">
+      <div class="booking-cta animate-on-scroll fade-up">
+        <h2>Ready to Book Your Service?</h2>
+        <p>Experience professional waxing in a comfortable, welcoming environment</p>
+        <div class="cta-buttons">
+          <a href="https://www.vagaro.com/barecanvas/services" class="btn btn-primary" target="_blank" rel="noopener">Book Online</a>
+          <a href="/contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  function toggleServices(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    const button = document.querySelector(`[onclick="toggleServices('${sectionId}')"]`) as HTMLButtonElement;
+    const icon = button?.querySelector('.expand-icon') as SVGElement;
+    const span = button?.querySelector('span') as HTMLSpanElement;
+    
+    if (section && button && icon && span) {
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+        span.textContent = span.textContent?.replace('View All', 'Hide') || '';
+      } else {
+        section.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+        span.textContent = span.textContent?.replace('Hide', 'View All') || '';
+      }
+    }
+  }
+</script>
+
+<style>
+  .services-hero {
+    background: linear-gradient(135deg, var(--light-beige) 0%, var(--warm-cream) 100%);
+    padding: 6rem 0 4rem;
+    text-align: center;
+  }
+
+  .services-hero h1 {
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--warm-brown);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .services-nav {
+    padding: 2rem 0;
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+    background: var(--light-beige);
+    border-bottom: 1px solid var(--warm-stone);
+  }
+
+  .service-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .category-link {
+    text-decoration: none;
+    color: var(--deep-brown);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    transition: all var(--transition-fast);
+    background: white;
+    box-shadow: 0 2px 10px rgba(74, 53, 40, 0.1);
+  }
+
+  .category-link:hover {
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-alt {
+    background: var(--light-beige);
+  }
+
+  .section-accent {
+    background: var(--deep-brown);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--deep-brown);
+  }
+
+  .section-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--warm-brown);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+  }
+
+  .popular-services {
+    margin-bottom: 3rem;
+  }
+
+  .category-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--deep-brown);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .services-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+  .service-card, .product-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(74, 53, 40, 0.08);
+    border: 1px solid rgba(196, 163, 115, 0.2);
+    transition: all var(--transition-fast);
+  }
+
+  .service-card:hover, .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(74, 53, 40, 0.15);
+  }
+
+  .service-card.featured {
+    border: 2px solid var(--muted-gold);
+    background: linear-gradient(135deg, white 0%, #faf9f7 100%);
+  }
+
+  .service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .service-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--deep-brown);
+    margin: 0;
+  }
+
+  .service-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--muted-gold);
+    background: var(--deep-brown);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .service-details p {
+    color: var(--warm-brown);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .expandable-services {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .expand-btn:hover {
+    background: #b8956a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .expand-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+  }
+
+  .expanded-services {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--cream-accents);
+  }
+
+  .product-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-beige);
+    border-radius: 50%;
+  }
+
+  .product-card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--deep-brown);
+    margin-bottom: 0.5rem;
+  }
+
+  .product-brand {
+    text-align: center;
+    font-weight: 600;
+    color: var(--muted-gold);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .product-card p {
+    text-align: center;
+    color: var(--warm-brown);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .booking-cta {
+    text-align: center;
+    color: white;
+  }
+
+  .booking-cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .booking-cta p {
+    font-size: 1.2rem;
+    color: var(--warm-cream);
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 1.1rem;
+  }
+
+  .btn-primary {
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+  }
+
+  .btn-primary:hover {
+    background: #b8956a;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: var(--deep-brown);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .services-nav {
+      top: 70px;
+    }
+
+    .service-categories {
+      gap: 1rem;
+    }
+
+    .category-link {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      grid-template-columns: 1fr;
+    }
+
+    .service-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .category-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn {
+      width: 200px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .service-card, .product-card {
+      padding: 1.5rem;
+    }
+
+    .expand-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+</style>

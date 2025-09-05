@@ -3,6 +3,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com', // Replace with your domain
+  site: 'https://barecanvas.com', // Update with actual domain when available
   integrations: [sitemap()],
 });

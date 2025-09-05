@@ -1,18 +1,287 @@
-<header>
-  <nav>
-    <a href="/">Home</a>
-    <a href="/blog">Blog</a>
-    <a href="/services">Services</a>
-    <a href="/contact">Contact</a>
+<header class="main-header">
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="/" class="logo">
+          <img src="/images/Bare-Canvas-TP-Logo.png" alt="BareCanvas" class="logo-img" />
+          <span class="logo-text">BareCanvas</span>
+        </a>
+        
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+          <a href="https://www.vagaro.com/barecanvas/services" class="btn btn-primary btn-small" target="_blank" rel="noopener">Book Now</a>
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
   </nav>
 </header>
 
-<style>
-  header {
-    background: #f4f4f4;
-    padding: 1rem;
+<script>
+  // Mobile navigation toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
   }
-  nav a {
-    margin-right: 1rem;
+  
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (navMenu && mobileToggle && target && !target.closest('.navbar')) {
+      navMenu.classList.remove('active');
+      mobileToggle.classList.remove('active');
+    }
+  });
+  
+  // Header scroll effect
+  let lastScrollY = window.scrollY;
+  
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.main-header') as HTMLElement;
+    if (header) {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      // Hide/show header on scroll
+      if (window.scrollY > lastScrollY && window.scrollY > 200) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+      lastScrollY = window.scrollY;
+    }
+  });
+</script>
+
+<style>
+  .main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(250, 249, 247, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--warm-stone);
+    transition: all var(--transition-fast);
+  }
+
+  .main-header.scrolled {
+    background: rgba(250, 249, 247, 0.98);
+    box-shadow: 0 2px 20px rgba(74, 53, 40, 0.1);
+  }
+
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 0.75rem;
+  }
+
+  .logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--deep-brown);
+    letter-spacing: 1px;
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--deep-brown);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color var(--transition-fast);
+    position: relative;
+  }
+
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--muted-gold);
+    transition: width var(--transition-fast);
+  }
+
+  .nav-menu a:hover::after,
+  .nav-menu a:focus::after {
+    width: 100%;
+  }
+
+  .nav-menu a:hover,
+  .nav-menu a:focus {
+    color: var(--muted-gold);
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn-small {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+  }
+
+  .mobile-toggle span {
+    width: 100%;
+    height: 3px;
+    background: var(--deep-brown);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .nav-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--warm-cream);
+      flex-direction: column;
+      gap: 0;
+      padding: 2rem;
+      border-bottom: 1px solid var(--warm-stone);
+      box-shadow: 0 4px 20px rgba(74, 53, 40, 0.1);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all var(--transition-fast);
+    }
+
+    .nav-menu.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .nav-menu li {
+      width: 100%;
+    }
+
+    .nav-menu a {
+      display: block;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--cream-accents);
+      text-align: center;
+    }
+
+    .nav-menu a:last-child {
+      border-bottom: none;
+    }
+
+    .btn-small {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+    }
+
+    .logo-text {
+      font-size: 1.4rem;
+    }
+
+    .logo-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .navbar {
+      padding: 0.75rem 0;
+    }
+
+    .nav-menu {
+      padding: 1.5rem;
+    }
+
+    .logo-text {
+      font-size: 1.3rem;
+    }
+
+    .logo-img {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  /* Add top padding to body to account for fixed header */
+  :global(body) {
+    padding-top: 80px;
   }
 </style>

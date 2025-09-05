@@ -2,8 +2,303 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro">
-  <main>
-    <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-  </main>
+<Layout 
+  title="BareCanvas | Professional Waxing & Beauty Services in Pearland"
+  description="Experience professional waxing services in a luxurious, comfortable environment. Brazilian, bikini, body & facial waxing by licensed esthetician Priscilla Garza in Pearland, Texas."
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background-logo"></div>
+    <div class="hero-gold-overlay"></div>
+    <div class="container">
+      <div class="hero-content animate-on-scroll fade-up">
+        <div class="gold-accent-line"></div>
+        <h1>Reveal Your Natural Beauty</h1>
+        <div class="gold-highlight"></div>
+        <p class="hero-subtitle">Professional waxing services in an elegant, comfort-focused environment</p>
+        <div class="hero-buttons">
+          <a href="#book" class="btn btn-primary">Book Your Session</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview Section -->
+  <section class="section section-alt" id="services">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Our Signature Services</h2>
+      <div class="grid grid-3">
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+          <div class="service-icon">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="30" cy="30" r="25" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
+              <path d="M20 30 h20 M30 20 v20" stroke="var(--deep-brown)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Brazilian Waxing</h3>
+          <p>Complete intimate waxing with personalized care and attention to your comfort level.</p>
+          <div class="service-price">Starting at $62</div>
+        </div>
+
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+          <div class="service-icon">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="15" width="40" height="30" rx="8" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
+              <circle cx="25" cy="25" r="3" fill="var(--deep-brown)"/>
+              <circle cx="35" cy="25" r="3" fill="var(--deep-brown)"/>
+              <path d="M22 35 Q30 40 38 35" stroke="var(--deep-brown)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Facial Waxing</h3>
+          <p>Precise eyebrow shaping and facial hair removal for a polished, refined look.</p>
+          <div class="service-price">Starting at $20</div>
+        </div>
+
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+          <div class="service-icon">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 45 Q30 20 45 45" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
+              <path d="M20 45 Q30 25 40 45" stroke="var(--deep-brown)" stroke-width="2" fill="none"/>
+              <circle cx="30" cy="15" r="4" fill="var(--muted-gold)"/>
+            </svg>
+          </div>
+          <h3>Full Body Waxing</h3>
+          <p>Comprehensive waxing services for legs, arms, and all body areas with professional techniques.</p>
+          <div class="service-price">Starting at $42</div>
+        </div>
+      </div>
+      <div class="text-center" style="margin-top: 3rem;">
+        <a href="/services" class="btn btn-gold animate-on-scroll fade-up">View All Services & Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="grid grid-2" style="align-items: center; gap: 4rem;">
+        <div class="animate-on-scroll fade-left">
+          <h2>Meet Priscilla Garza</h2>
+          <p class="lead">Licensed esthetician dedicated to providing exceptional waxing services in a professional, comfortable environment.</p>
+          <p>At BareCanvas, we believe your comfort comes first. Every service is personalized to your needs, with careful attention to technique and hygiene standards that ensure both safety and results.</p>
+          <p>Experience the difference that professional expertise and genuine care make in your beauty routine.</p>
+          <a href="/about" class="btn btn-secondary">Learn More About Our Approach</a>
+        </div>
+        <div class="about-visual animate-on-scroll fade-right">
+          <div class="image-placeholder">
+            <img src="/images/logo.png" alt="BareCanvas Logo" style="max-width: 300px; opacity: 0.9;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="section section-accent">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Why Choose BareCanvas</h2>
+      <div class="grid grid-3">
+        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
+          <div class="feature-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="25" cy="25" r="20" stroke="var(--muted-gold)" stroke-width="2"/>
+              <path d="M18 25 l7 7 12-14" stroke="var(--deep-brown)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3>Professional Expertise</h3>
+          <p>Licensed esthetician with specialized training in advanced waxing techniques for all skin types.</p>
+        </div>
+
+        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
+          <div class="feature-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25 5 L30 18 L43 18 L33 28 L38 41 L25 33 L12 41 L17 28 L7 18 L20 18 Z" stroke="var(--muted-gold)" stroke-width="2" fill="var(--cream-accents)"/>
+            </svg>
+          </div>
+          <h3>Premium Products</h3>
+          <p>We use only the highest quality waxes and aftercare products for optimal results and comfort.</p>
+        </div>
+
+        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
+          <div class="feature-icon">
+            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="15" width="30" height="25" rx="5" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
+              <circle cx="20" cy="25" r="3" fill="var(--deep-brown)"/>
+              <circle cx="30" cy="25" r="3" fill="var(--deep-brown)"/>
+              <path d="M17 32 Q25 36 33 32" stroke="var(--deep-brown)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Comfort-Focused</h3>
+          <p>Every detail is designed for your comfort, from our gentle techniques to our welcoming atmosphere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">What Our Clients Say</h2>
+      <div class="grid grid-3">
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Professional, clean, and so comfortable. Priscilla made me feel at ease from the moment I walked in. Best waxing experience I've ever had!"</p>
+          <cite>— Sarah M.</cite>
+        </div>
+
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"I was nervous about my first Brazilian, but Priscilla explained everything and made the whole process comfortable. I'm so glad I found BareCanvas!"</p>
+          <cite>— Jennifer L.</cite>
+        </div>
+
+        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Exceptional service and results. The attention to detail and professional approach keeps me coming back. Highly recommend!"</p>
+          <cite>— Maria K.</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact/Booking Section -->
+  <section class="section section-alt" id="book">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title animate-on-scroll fade-up">Ready to Experience Professional Waxing?</h2>
+        <p class="animate-on-scroll fade-up" style="font-size: 1.25rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Book your appointment today and discover the difference professional care makes.</p>
+        
+        <div class="booking-info grid grid-3 animate-on-scroll fade-up" style="margin-bottom: 3rem;">
+          <div class="contact-item">
+            <h4>Phone</h4>
+            <p><a href="tel:832-570-9458" style="color: var(--muted-gold); text-decoration: none;">(832) 570-9458</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Instagram</h4>
+            <p><a href="https://instagram.com/barecanvas.beauty" target="_blank" style="color: var(--muted-gold); text-decoration: none;">@barecanvas.beauty</a></p>
+          </div>
+          <div class="contact-item">
+            <h4>Hours</h4>
+            <p>By Appointment<br>Monday - Saturday</p>
+          </div>
+        </div>
+
+        <div class="location-section animate-on-scroll fade-up" style="margin-bottom: 3rem;">
+          <div class="location-grid">
+            <div class="location-info">
+              <h3>Visit Our Professional Suite</h3>
+              <div class="address-details">
+                <p class="address-line"><strong>BareCanvas Waxing Studio</strong></p>
+                <p class="address-line">2743 Smith Ranch Rd, Suite 804</p>
+                <p class="address-line">Pearland, TX 77584</p>
+              </div>
+              <div class="location-features">
+                <div class="feature-tag">Professional Suite</div>
+                <div class="feature-tag">Private Entrance</div>
+                <div class="feature-tag">Free Parking</div>
+                <div class="feature-tag">Clean & Safe</div>
+              </div>
+              <a href="https://maps.google.com/?q=2743+Smith+Ranch+Rd+Suite+804+Pearland+TX+77584" target="_blank" class="directions-link">
+                Get Directions →
+              </a>
+            </div>
+            <div class="location-map">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.682!2d-95.2890567!3d29.5635833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640db9c7e0f7d7f%3A0x1234567890abcdef!2s2743%20Smith%20Ranch%20Rd%20Suite%20804%2C%20Pearland%2C%20TX%2077584!5e0!3m2!1sen!2sus!4v1641234567890!5m2!1sen!2sus" 
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="BareCanvas Waxing Studio Location">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-buttons animate-on-scroll fade-up">
+          <a href="https://www.vagaro.com/barecanvas/services" class="btn btn-primary" target="_blank" rel="noopener">Book Online</a>
+          <a href="/contact" class="btn btn-secondary">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .service-icon,
+  .feature-icon {
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--cream-accents);
+    transition: all var(--transition-fast);
+  }
+
+  .card:hover .service-icon,
+  .card:hover .feature-icon {
+    transform: scale(1.1);
+    background: var(--light-beige);
+  }
+
+  .service-price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--muted-gold);
+    margin-top: 1rem;
+  }
+
+  .testimonial-stars {
+    color: var(--muted-gold);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lead {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--deep-brown);
+    margin-bottom: 2rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .contact-item {
+    text-align: center;
+  }
+
+  .contact-item h4 {
+    color: var(--deep-brown);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+  }
+
+  .image-placeholder {
+    text-align: center;
+    padding: 2rem;
+    background: var(--cream-accents);
+    border-radius: var(--border-radius);
+  }
+
+  /* Staggered animation delays */
+  .animate-on-scroll:nth-child(1) { animation-delay: 0.1s; }
+  .animate-on-scroll:nth-child(2) { animation-delay: 0.2s; }
+  .animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
+  .animate-on-scroll:nth-child(4) { animation-delay: 0.4s; }
+</style>

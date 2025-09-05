@@ -1,12 +1,235 @@
-<footer>
-  <p>&copy; {new Date().getFullYear()} Your Website</p>
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <img src="/images/logo.png" alt="BareCanvas" class="footer-logo" />
+          <h4>BareCanvas</h4>
+          <p>Professional waxing services in Pearland, Texas</p>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services">Brazilian Waxing</a></li>
+          <li><a href="/services">Facial Waxing</a></li>
+          <li><a href="/services">Full Body Waxing</a></li>
+          <li><a href="/services">View All Services</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <div class="contact-info">
+          <p>2743 Smith Ranch Rd<br>Suite 804<br>Pearland, TX 77584</p>
+          <p>Phone: (832) 570-9458</p>
+          <p>Instagram: @barecanvas.beauty</p>
+        </div>
+        <div class="social-links">
+          <a href="https://instagram.com/barecanvas.beauty" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p>&copy; {new Date().getFullYear()} BareCanvas. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms-of-service">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
 <style>
-  footer {
-    background: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
+  .main-footer {
+    background: var(--deep-brown);
+    color: var(--warm-cream);
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    padding: 4rem 0 2rem;
+  }
+
+  .footer-section h4 {
+    color: var(--muted-gold);
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand {
+    max-width: 280px;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+  }
+
+  .footer-brand h4 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-brand p {
+    color: var(--cream-accents);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-section ul li a {
+    color: var(--cream-accents);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    font-size: 0.95rem;
+  }
+
+  .footer-section ul li a:hover,
+  .footer-section ul li a:focus {
+    color: var(--muted-gold);
+  }
+
+  .contact-info p {
+    color: var(--cream-accents);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--warm-brown);
+    color: var(--warm-cream);
+    transition: all var(--transition-fast);
+  }
+
+  .social-links a:hover,
+  .social-links a:focus {
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+    transform: translateY(-2px);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid var(--warm-brown);
+    padding: 2rem 0;
+  }
+
+  .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom p {
+    color: var(--cream-accents);
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links a {
+    color: var(--cream-accents);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus {
+    color: var(--muted-gold);
+  }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+
+    .footer-brand {
+      max-width: none;
+    }
+
+    .footer-bottom-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 </style>
