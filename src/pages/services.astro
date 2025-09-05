@@ -3,54 +3,275 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Professional Waxing Services | BareCanvas Pearland"
-  description="Comprehensive waxing services including Brazilian, bikini, facial, and full body waxing. Professional esthetician in Pearland, Texas with transparent pricing and comfort-focused approach."
+  title="Professional Waxing Services & Pricing | BareCanvas"
+  description="Comprehensive waxing services in Pearland, TX. Brazilian, bikini, facial, and body waxing with transparent pricing. Professional esthetician services."
 >
-  <!-- Hero Section -->
+  <!-- Services Hero -->
   <section class="services-hero">
+    <div class="hero-pattern"></div>
     <div class="container">
-      <div class="hero-content animate-on-scroll fade-up">
-        <h1>Professional Waxing Services</h1>
-        <p class="hero-subtitle">Comprehensive treatments tailored to your comfort and needs</p>
+      <div class="hero-content">
+        <div class="hero-decoration-left"></div>
+        <div class="hero-decoration-right"></div>
+        <h1 class="animate-on-scroll fade-up">Professional Waxing Services</h1>
+        <div class="hero-divider"></div>
+        <p class="hero-subtitle animate-on-scroll fade-up">Complete service menu with transparent pricing and professional care</p>
       </div>
     </div>
   </section>
 
   <!-- Services Navigation -->
-  <section class="services-nav section-alt">
+  <section class="services-nav">
     <div class="container">
-      <nav class="service-categories animate-on-scroll fade-up">
-        <a href="#brazilian" class="category-link active">Brazilian Waxing</a>
-        <a href="#bikini" class="category-link">Bikini Services</a>
-        <a href="#facial" class="category-link">Facial Waxing</a>
-        <a href="#body" class="category-link">Body Waxing</a>
-        <a href="#products" class="category-link">Professional Products</a>
-      </nav>
+      <div class="service-categories">
+        <a href="#body-waxing" class="category-link">Body Waxing</a>
+        <a href="#facial-waxing" class="category-link">Facial Waxing</a>
+        <a href="#specialized-brows" class="category-link">Specialized Brows</a>
+        <a href="#products" class="category-link">Products</a>
+      </div>
+      <div class="complete-services-cta">
+        <a href="/complete-services" class="btn btn-outline">View Complete Services & Descriptions</a>
+      </div>
     </div>
   </section>
 
-  <!-- Brazilian Waxing Services -->
-  <section id="brazilian" class="section">
+  <!-- Body Waxing Services -->
+  <section id="body-waxing" class="section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll fade-up">Brazilian Waxing</h2>
-      <p class="section-intro animate-on-scroll fade-up">Complete intimate waxing with personalized attention to your comfort level</p>
+      <h2 class="section-title animate-on-scroll fade-up">Body Waxing Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Professional body waxing from intimate areas to full body coverage</p>
       
-      <div class="services-grid">
-        <div class="service-card featured animate-on-scroll scale-in">
-          <div class="service-header">
-            <h3>Brazilian (Women Only)</h3>
-            <div class="service-price">$62</div>
+      <!-- Popular Body Services (Always Visible) -->
+      <div class="popular-services">
+        <h3 class="category-subtitle">Popular Services</h3>
+        <div class="services-grid grid-3">
+          <div class="service-card featured animate-on-scroll fade-up">
+            <div class="service-header">
+              <h4>Brazilian (Women Only)</h4>
+              <div class="service-price">$62</div>
+            </div>
+            <div class="service-details">
+              <p>Complete customization from full removal to partial shaping. 30-45 minutes.</p>
+            </div>
           </div>
-          <div class="service-details">
-            <p>Most comprehensive intimate waxing service with complete customization from full removal to partial shaping.</p>
-            <ul class="service-features">
-              <li>Complete customization options</li>
-              <li>Includes bikini line and butt strip coverage</li>
-              <li>30-45 minutes of professional care</li>
-              <li>Highest skill level techniques</li>
-            </ul>
-            <div class="service-note">
-              <strong>Perfect for:</strong> Ultimate intimate waxing experience with complete customization
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+            <div class="service-header">
+              <h4>Bikini Full</h4>
+              <div class="service-price">$51</div>
+            </div>
+            <div class="service-details">
+              <p>Comprehensive front area coverage with customizable options. 20-30 minutes.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+            <div class="service-header">
+              <h4>Full Legs</h4>
+              <div class="service-price">$80</div>
+            </div>
+            <div class="service-details">
+              <p>Complete hip-to-toe coverage including inner thighs and feet. 45-60 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Body Services -->
+      <div class="expandable-services">
+        <button class="expand-btn" onclick="toggleServices('body-services')">
+          <span>View All 22+ Body Waxing Services</span>
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        
+        <div id="body-services" class="expanded-services" style="display: none;">
+          <div class="services-grid grid-4">
+            <!-- Intimate Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Bikini Line</h4>
+                <div class="service-price">$44</div>
+              </div>
+              <div class="service-details">
+                <p>Essential maintenance with 4-finger width coverage. Perfect for first-time clients.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Butt</h4>
+                <div class="service-price">$30</div>
+              </div>
+              <div class="service-details">
+                <p>Complete buttock area hair removal including central strip and outer cheeks.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Butt Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Targeted central strip area between buttocks. Quick 10-15 minute service.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Inner Thigh</h4>
+                <div class="service-price">$20</div>
+              </div>
+              <div class="service-details">
+                <p>Hair removal extending from bikini line toward inner leg area.</p>
+              </div>
+            </div>
+
+            <!-- Arm Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Arms</h4>
+                <div class="service-price">$50</div>
+              </div>
+              <div class="service-details">
+                <p>Complete arm coverage from shoulder to fingertips. 30-40 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Half Arms</h4>
+                <div class="service-price">$32</div>
+              </div>
+              <div class="service-details">
+                <p>Upper or lower arm treatment. Choose based on hair growth patterns.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Underarms</h4>
+                <div class="service-price">$22</div>
+              </div>
+              <div class="service-details">
+                <p>Complete underarm hair removal. Results last 3-4 weeks. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Leg Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Half Legs</h4>
+                <div class="service-price">$42</div>
+              </div>
+              <div class="service-details">
+                <p>Upper legs (hip to knee) or lower legs (knee to toe). 25-35 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Back of Upper Leg</h4>
+                <div class="service-price">$20</div>
+              </div>
+              <div class="service-details">
+                <p>Posterior thigh area often visible in swimwear and shorter clothing.</p>
+              </div>
+            </div>
+
+            <!-- Chest & Torso -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Chest</h4>
+                <div class="service-price">$35</div>
+              </div>
+              <div class="service-details">
+                <p>Complete chest hair removal from collar bone to upper abdomen. 20-30 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Chest Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Central chest area hair removal without full chest treatment. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Nipples</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized service for nipple area hair using gentle techniques.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Stomach</h4>
+                <div class="service-price">$35</div>
+              </div>
+              <div class="service-details">
+                <p>Complete abdominal hair removal from chest to waistline. 20-25 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Stomach Strip</h4>
+                <div class="service-price">$18</div>
+              </div>
+              <div class="service-details">
+                <p>Central stomach area from underwear line to belly button. 10-15 minutes.</p>
+              </div>
+            </div>
+
+            <!-- Back Services -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Full Back</h4>
+                <div class="service-price">$55</div>
+              </div>
+              <div class="service-details">
+                <p>Complete back coverage from shoulders to waistline. 30-40 minutes.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Lower Back</h4>
+                <div class="service-price">$24</div>
+              </div>
+              <div class="service-details">
+                <p>Lower third of back area where hair growth is most concentrated.</p>
+              </div>
+            </div>
+
+            <!-- Hands & Feet -->
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Hands</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Professional hand and finger hair removal for smooth appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Toes</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Foot and individual toe hair removal. Perfect for sandal season.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -58,154 +279,168 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Bikini Services -->
-  <section id="bikini" class="section section-alt">
+  <!-- Facial Waxing Services -->
+  <section id="facial-waxing" class="section section-alt">
     <div class="container">
-      <h2 class="section-title animate-on-scroll fade-up">Bikini Services</h2>
-      <p class="section-intro animate-on-scroll fade-up">Professional bikini waxing options for every comfort level</p>
+      <h2 class="section-title animate-on-scroll fade-up">Facial Waxing Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Precise facial hair removal for a polished, refined appearance</p>
+      
+      <!-- Popular Facial Services -->
+      <div class="popular-services">
+        <h3 class="category-subtitle">Popular Services</h3>
+        <div class="services-grid grid-3">
+          <div class="service-card featured animate-on-scroll fade-up">
+            <div class="service-header">
+              <h4>Full Face</h4>
+              <div class="service-price">$60</div>
+            </div>
+            <div class="service-details">
+              <p>Complete facial hair management in a single appointment. 45-60 minutes.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+            <div class="service-header">
+              <h4>Eyebrows</h4>
+              <div class="service-price">$20</div>
+            </div>
+            <div class="service-details">
+              <p>Professional shaping with wax, trim, and tweeze. Face shape consultation included.</p>
+            </div>
+          </div>
+
+          <div class="service-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+            <div class="service-header">
+              <h4>Upper Lip</h4>
+              <div class="service-price">$10</div>
+            </div>
+            <div class="service-details">
+              <p>Quick upper lip hair removal. Results last 3-4 weeks. 5-10 minutes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Expandable Facial Services -->
+      <div class="expandable-services">
+        <button class="expand-btn" onclick="toggleServices('facial-services')">
+          <span>View All 12+ Facial Waxing Services</span>
+          <svg class="expand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </button>
+        
+        <div id="facial-services" class="expanded-services" style="display: none;">
+          <div class="services-grid grid-4">
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Lower Lip</h4>
+                <div class="service-price">$10</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized lower lip and surrounding area hair removal.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Cheeks</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Full cheek area from hairline to jawline for smooth appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Nose</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Careful nasal hair removal using specialized techniques and tools.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Chin</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Professional chin hair removal for smooth, confident results.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Sideburns</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Precise sideburn shaping for polished, well-groomed appearance.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Hairline</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Forehead hairline cleanup for clean, defined boundary.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Neck</h4>
+                <div class="service-price">$15</div>
+              </div>
+              <div class="service-details">
+                <p>Front and back neck area hair removal for complete grooming.</p>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <div class="service-header">
+                <h4>Ears</h4>
+                <div class="service-price">$13</div>
+              </div>
+              <div class="service-details">
+                <p>Specialized ear hair removal using safe, gentle techniques.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialized Brow Services -->
+  <section id="specialized-brows" class="section">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll fade-up">Specialized Brow Services</h2>
+      <p class="section-intro animate-on-scroll fade-up">Advanced eyebrow treatments for enhanced shape and color</p>
       
       <div class="services-grid grid-2">
-        <div class="service-card animate-on-scroll fade-left">
+        <div class="service-card featured animate-on-scroll fade-left">
           <div class="service-header">
-            <h3>Bikini Full</h3>
-            <div class="service-price">$51</div>
+            <h4>Brow Wax + Lamination & Tint</h4>
+            <div class="service-price">$90</div>
           </div>
           <div class="service-details">
-            <p>Comprehensive front area coverage with customizable options.</p>
-            <ul class="service-features">
-              <li>More coverage than basic bikini</li>
-              <li>Natural coverage options maintained</li>
-              <li>20-30 minutes of service</li>
-              <li>Professional technique</li>
-            </ul>
-            <div class="service-note">
-              <strong>Perfect for:</strong> More coverage than basic bikini with natural options
-            </div>
+            <p>Transformative chemical process that straightens, lifts and sets brow hairs for a fuller, polished look. Includes waxing, lamination (4-8 weeks), and tint (4-6 weeks).</p>
           </div>
         </div>
 
         <div class="service-card animate-on-scroll fade-right">
           <div class="service-header">
-            <h3>Bikini Line</h3>
-            <div class="service-price">$44</div>
+            <h4>Brow Wax + Tint</h4>
+            <div class="service-price">$45</div>
           </div>
           <div class="service-details">
-            <p>Essential maintenance with 4-finger width coverage.</p>
-            <ul class="service-features">
-              <li>Perfect for first-time clients</li>
-              <li>Quick 15-20 minute service</li>
-              <li>Professional maintenance</li>
-              <li>Comfortable introduction to waxing</li>
-            </ul>
-            <div class="service-note">
-              <strong>Perfect for:</strong> Professional maintenance for underwear/swimwear confidence
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Facial Waxing -->
-  <section id="facial" class="section">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll fade-up">Facial Waxing</h2>
-      <p class="section-intro animate-on-scroll fade-up">Precise hair removal for a polished, refined appearance</p>
-      
-      <div class="services-grid grid-3">
-        <div class="service-card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
-          <div class="service-header">
-            <h3>Full Face</h3>
-            <div class="service-price">$60</div>
-          </div>
-          <div class="service-details">
-            <p>Most comprehensive facial service covering all areas.</p>
-            <ul class="service-features">
-              <li>45-60 minutes of detailed work</li>
-              <li>Includes hairline, brows, nose, cheeks</li>
-              <li>Lips, chin, and neck coverage</li>
-              <li>Complete facial hair management</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
-          <div class="service-header">
-            <h3>Eyebrows</h3>
-            <div class="service-price">$20</div>
-          </div>
-          <div class="service-details">
-            <p>Professional shaping with consultation.</p>
-            <ul class="service-features">
-              <li>Wax, trim, and tweeze service</li>
-              <li>Face shape consultation included</li>
-              <li>Professional shaping techniques</li>
-              <li>Perfectly groomed appearance</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
-          <div class="service-header">
-            <h3>Individual Areas</h3>
-            <div class="service-price">$10-$25</div>
-          </div>
-          <div class="service-details">
-            <p>Targeted facial hair removal.</p>
-            <ul class="service-features">
-              <li>Upper lip, chin, or nose</li>
-              <li>Cheeks or forehead</li>
-              <li>Precision technique</li>
-              <li>Quick, professional service</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Body Waxing -->
-  <section id="body" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title animate-on-scroll fade-up">Full Body Waxing</h2>
-      <p class="section-intro animate-on-scroll fade-up">Complete body hair removal with professional techniques</p>
-      
-      <div class="services-grid grid-2">
-        <div class="service-card animate-on-scroll fade-left">
-          <div class="service-header">
-            <h3>Full Legs</h3>
-            <div class="service-price">$80</div>
-          </div>
-          <div class="service-details">
-            <p>Complete hip-to-toe coverage including inner thighs and feet.</p>
-            <ul class="service-features">
-              <li>Most time-intensive body service</li>
-              <li>45-60 minutes of coverage</li>
-              <li>Includes feet and inner thighs</li>
-              <li>Complete leg transformation</li>
-            </ul>
-            <div class="service-note">
-              <strong>Perfect for:</strong> Ultimate smoothness and complete coverage
-            </div>
-          </div>
-        </div>
-
-        <div class="service-card animate-on-scroll fade-right">
-          <div class="service-header">
-            <h3>Other Body Areas</h3>
-            <div class="service-price">$22-$55</div>
-          </div>
-          <div class="service-details">
-            <p>Professional waxing for all body areas.</p>
-            <ul class="service-features">
-              <li><strong>Underarms:</strong> $22</li>
-              <li><strong>Full Back:</strong> $55</li>
-              <li><strong>Half Legs:</strong> $42</li>
-              <li><strong>Full Arms:</strong> $50</li>
-            </ul>
-            <div class="service-note">
-              <strong>All services:</strong> Professional technique with attention to comfort
-            </div>
+            <p>Enhanced eyebrow shaping and color service. Professional waxing combined with tint that lasts 4-6 weeks for defined, fuller-looking brows.</p>
           </div>
         </div>
       </div>
@@ -213,12 +448,12 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Professional Products -->
-  <section id="products" class="section">
+  <section id="products" class="section section-alt">
     <div class="container">
       <h2 class="section-title animate-on-scroll fade-up">Professional Aftercare Products</h2>
       <p class="section-intro animate-on-scroll fade-up">Premium skincare products to maintain and enhance your results</p>
       
-      <div class="products-grid grid-4">
+      <div class="services-grid grid-4">
         <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
           <div class="product-icon">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -228,12 +463,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3>Pre-Waxing Oil</h3>
           <p class="product-brand">Waxing Lovely's</p>
-          <p>Protective oil with calendula extract for ultra-soothing preparation.</p>
-          <ul class="product-features">
-            <li>Calendula extract for healing</li>
-            <li>Organic grape seed oil</li>
-            <li>Non-greasy, vegan formula</li>
-          </ul>
+          <p>Protective oil with calendula extract and organic grape seed oil for ultra-soothing preparation.</p>
         </div>
 
         <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
@@ -245,12 +475,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3>Ingrown Prevention</h3>
           <p class="product-brand">Zandiland Beauty</p>
-          <p>Professional scrubs and moisturizers to prevent ingrown hairs.</p>
-          <ul class="product-features">
-            <li>OG Deck Scrub for sensitive areas</li>
-            <li>Deck Polish moisturizer</li>
-            <li>Vegan, paraben-free</li>
-          </ul>
+          <p>Professional scrubs and moisturizers including OG Deck Scrub and Deck Polish.</p>
         </div>
 
         <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
@@ -262,12 +487,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3>Ingrown Spray</h3>
           <p class="product-brand">Agent 88</p>
-          <p>Treatment spray for ingrown hairs and body acne with salicylic acid.</p>
-          <ul class="product-features">
-            <li>Salicylic & lactic acid</li>
-            <li>Antimicrobial properties</li>
-            <li>Reduces inflammation</li>
-          </ul>
+          <p>Treatment spray with salicylic and lactic acid for ingrown hairs and body acne.</p>
         </div>
 
         <div class="product-card animate-on-scroll scale-in" style="animation-delay: 0.4s;">
@@ -279,12 +499,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <h3>Clarifying Pads</h3>
           <p class="product-brand">Skin Script</p>
-          <p>Professional-grade acne treatment pads with glycolic and salicylic acid.</p>
-          <ul class="product-features">
-            <li>2% glycolic acid</li>
-            <li>2% salicylic acid</li>
-            <li>Tea tree oil</li>
-          </ul>
+          <p>Professional-grade pads with 2% glycolic acid, 2% salicylic acid, and tea tree oil.</p>
         </div>
       </div>
     </div>
@@ -300,21 +515,177 @@ import Layout from '../layouts/Layout.astro';
           <a href="https://www.vagaro.com/barecanvas/services" class="btn btn-primary" target="_blank" rel="noopener">Book Online</a>
           <a href="/contact" class="btn btn-secondary">Contact Us</a>
         </div>
-        <p class="offer-text">New clients receive 15% off their first service</p>
       </div>
     </div>
   </section>
 </Layout>
 
+<script>
+  function toggleServices(sectionId: string) {
+    const section = document.getElementById(sectionId);
+    const button = document.querySelector(`[onclick="toggleServices('${sectionId}')"]`) as HTMLButtonElement;
+    const icon = button?.querySelector('.expand-icon') as SVGElement;
+    const span = button?.querySelector('span') as HTMLSpanElement;
+    
+    if (section && button && icon && span) {
+      if (section.style.display === 'none') {
+        section.style.display = 'block';
+        icon.style.transform = 'rotate(180deg)';
+        span.textContent = span.textContent?.replace('View All', 'Hide') || '';
+      } else {
+        section.style.display = 'none';
+        icon.style.transform = 'rotate(0deg)';
+        span.textContent = span.textContent?.replace('Hide', 'View All') || '';
+      }
+    }
+  }
+</script>
+
 <style>
+  /* Add scroll padding to account for sticky header and nav */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px; /* Account for both header (80px) and sticky nav */
+  }
+
   .services-hero {
-    background: linear-gradient(135deg, var(--light-beige) 0%, var(--warm-cream) 100%);
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(196, 163, 115, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 50% 20%, rgba(149, 119, 90, 0.04) 0%, transparent 40%),
+      linear-gradient(135deg, var(--light-beige) 0%, var(--warm-cream) 100%);
     padding: 6rem 0 4rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 35px,
+      rgba(212, 175, 55, 0.03) 35px,
+      rgba(212, 175, 55, 0.03) 70px
+    );
+    animation: subtle-move 20s linear infinite;
+    pointer-events: none;
+  }
+
+  .services-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, var(--warm-cream), transparent);
+    pointer-events: none;
+  }
+
+  @keyframes subtle-move {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(35px, 35px); }
+  }
+
+  .hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 2px, transparent 2px),
+      radial-gradient(circle at 75% 75%, rgba(196, 163, 115, 0.1) 2px, transparent 2px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-decoration-left,
+  .hero-decoration-right {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-decoration-left {
+    top: -50px;
+    left: -75px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+    animation: float-left 8s ease-in-out infinite;
+  }
+
+  .hero-decoration-right {
+    bottom: -50px;
+    right: -75px;
+    background: radial-gradient(circle, rgba(196, 163, 115, 0.05) 0%, transparent 70%);
+    animation: float-right 10s ease-in-out infinite;
+  }
+
+  @keyframes float-left {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, -10px) rotate(5deg); }
+  }
+
+  @keyframes float-right {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-20px, 10px) rotate(-5deg); }
   }
 
   .services-hero h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 3rem;
+    color: var(--deep-brown);
+    font-family: var(--font-heading);
+  }
+
+  .hero-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--muted-gold), transparent);
+    margin: 1.5rem auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
   }
 
   .hero-subtitle {
@@ -322,6 +693,10 @@ import Layout from '../layouts/Layout.astro';
     color: var(--warm-brown);
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    line-height: 1.6;
   }
 
   .services-nav {
@@ -338,6 +713,13 @@ import Layout from '../layouts/Layout.astro';
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .complete-services-cta {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--warm-stone);
   }
 
   .category-link {
@@ -347,224 +729,283 @@ import Layout from '../layouts/Layout.astro';
     padding: 0.75rem 1.5rem;
     border-radius: 25px;
     transition: all var(--transition-fast);
-    position: relative;
+    background: white;
+    box-shadow: 0 2px 10px rgba(74, 53, 40, 0.1);
   }
 
-  .category-link:hover,
-  .category-link.active {
+  .category-link:hover {
     background: var(--muted-gold);
     color: var(--deep-brown);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .section {
+    padding: 4rem 0;
+    /* Add negative margin and positive padding for anchor links */
+    margin-top: -100px;
+    padding-top: calc(4rem + 100px);
+  }
+
+  .section-alt {
+    background: var(--light-beige);
+  }
+
+  .section-accent {
+    background: var(--deep-brown);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--deep-brown);
   }
 
   .section-intro {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--warm-brown);
     max-width: 600px;
     margin: 0 auto 3rem;
   }
 
-  .services-grid {
-    display: grid;
-    gap: 2rem;
+  .popular-services {
     margin-bottom: 3rem;
   }
 
-  .services-grid.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  .category-subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--deep-brown);
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
-  .services-grid.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  .services-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
   }
 
-  .service-card {
+  .grid-2 { grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  .grid-4 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+  .service-card, .product-card {
     background: white;
-    border-radius: var(--border-radius);
+    border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(74, 53, 40, 0.08);
+    box-shadow: 0 8px 25px rgba(74, 53, 40, 0.08);
+    border: 1px solid rgba(196, 163, 115, 0.2);
     transition: all var(--transition-fast);
-    position: relative;
-    overflow: hidden;
+  }
+
+  .service-card:hover, .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(74, 53, 40, 0.15);
   }
 
   .service-card.featured {
     border: 2px solid var(--muted-gold);
-    transform: scale(1.02);
-  }
-
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--muted-gold), var(--deep-brown));
-    transform: scaleX(0);
-    transition: transform var(--transition-fast);
-  }
-
-  .service-card:hover::before {
-    transform: scaleX(1);
-  }
-
-  .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(74, 53, 40, 0.15);
+    background: linear-gradient(135deg, white 0%, #faf9f7 100%);
   }
 
   .service-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid var(--cream-accents);
+    margin-bottom: 1rem;
   }
 
-  .service-header h3 {
+  .service-header h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
     color: var(--deep-brown);
-    font-size: 1.5rem;
     margin: 0;
   }
 
   .service-price {
-    font-size: 1.75rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--muted-gold);
-    font-family: var(--font-heading);
-  }
-
-  .service-features {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .service-features li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-    color: var(--warm-brown);
-  }
-
-  .service-features li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--muted-gold);
-    font-weight: bold;
-  }
-
-  .service-note {
-    background: var(--cream-accents);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .service-note strong {
-    color: var(--deep-brown);
-  }
-
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .product-card {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(74, 53, 40, 0.08);
+    background: var(--deep-brown);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    min-width: 60px;
     text-align: center;
-    transition: all var(--transition-fast);
   }
 
-  .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(74, 53, 40, 0.12);
+  .service-details p {
+    color: var(--warm-brown);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .expandable-services {
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  .expand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  }
+
+  .expand-btn:hover {
+    background: #b8956a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  }
+
+  .expand-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform var(--transition-fast);
+  }
+
+  .expanded-services {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--cream-accents);
   }
 
   .product-icon {
-    margin: 0 auto 1.5rem;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
     background: var(--light-beige);
+    border-radius: 50%;
+  }
+
+  .product-card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--deep-brown);
+    margin-bottom: 0.5rem;
   }
 
   .product-brand {
-    color: var(--muted-gold);
+    text-align: center;
     font-weight: 600;
+    color: var(--muted-gold);
     margin-bottom: 1rem;
-    font-size: 0.95rem;
-  }
-
-  .product-features {
-    text-align: left;
-    margin-top: 1rem;
-  }
-
-  .product-features li {
     font-size: 0.9rem;
-    padding: 0.25rem 0;
+  }
+
+  .product-card p {
+    text-align: center;
+    color: var(--warm-brown);
+    line-height: 1.5;
+    margin: 0;
   }
 
   .booking-cta {
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+    color: white;
   }
 
   .booking-cta h2 {
+    color: white;
     margin-bottom: 1rem;
   }
 
   .booking-cta p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--warm-cream);
     margin-bottom: 2rem;
+    opacity: 0.9;
   }
 
   .cta-buttons {
     display: flex;
-    gap: 1rem;
     justify-content: center;
+    gap: 1rem;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
   }
 
-  .offer-text {
-    color: var(--muted-gold);
-    font-style: italic;
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 8px;
     font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    font-size: 1.1rem;
   }
 
-  /* Mobile Responsive */
+  .btn-primary {
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+  }
+
+  .btn-primary:hover {
+    background: #b8956a;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .btn-secondary:hover {
+    background: white;
+    color: var(--deep-brown);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--deep-brown);
+    border: 2px solid var(--muted-gold);
+    font-weight: 600;
+  }
+
+  .btn-outline:hover {
+    background: var(--muted-gold);
+    color: var(--deep-brown);
+    transform: translateY(-2px);
+  }
+
   @media (max-width: 768px) {
-    .services-hero {
-      padding: 4rem 0 3rem;
+    .services-nav {
+      top: 70px;
     }
 
     .service-categories {
       gap: 1rem;
-      padding: 0 1rem;
     }
 
     .category-link {
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       font-size: 0.9rem;
     }
 
-    .services-grid.grid-2,
-    .services-grid.grid-3 {
+    .grid-2, .grid-3, .grid-4 {
       grid-template-columns: 1fr;
     }
 
@@ -574,59 +1015,41 @@ import Layout from '../layouts/Layout.astro';
       gap: 0.5rem;
     }
 
-    .service-price {
-      font-size: 1.5rem;
+    .section-title {
+      font-size: 2rem;
     }
 
-    .products-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .category-subtitle {
+      font-size: 1.5rem;
     }
 
     .cta-buttons {
       flex-direction: column;
       align-items: center;
     }
+
+    .btn {
+      width: 200px;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .service-card, .product-card {
+      padding: 1.5rem;
+    }
+
+    .expand-btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
   }
 </style>
-
-<script>
-  // Smooth scrolling for service category links
-  document.querySelectorAll('.category-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
-      if (targetElement) {
-        const offset = 120; // Account for sticky navigation
-        const targetPosition = targetElement.offsetTop - offset;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-        
-        // Update active link
-        document.querySelectorAll('.category-link').forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
-  });
-
-  // Update active link on scroll
-  window.addEventListener('scroll', () => {
-    const sections = ['brazilian', 'bikini', 'facial', 'body', 'products'];
-    const offset = 150;
-    
-    sections.forEach(sectionId => {
-      const section = document.getElementById(sectionId);
-      const link = document.querySelector(`a[href="#${sectionId}"]`);
-      
-      if (section && link) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= offset && rect.bottom >= offset) {
-          document.querySelectorAll('.category-link').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
-      }
-    });
-  });
-</script>

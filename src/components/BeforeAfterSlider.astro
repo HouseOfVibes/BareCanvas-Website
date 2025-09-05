@@ -1,0 +1,238 @@
+---
+export interface Props {
+  beforeImage: string;
+  afterImage: string;
+  altText: string;
+  title: string;
+}
+
+const { beforeImage, afterImage, altText, title } = Astro.props;
+const sliderId = `slider-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class="before-after-container" data-slider-id={sliderId}>
+  <h3 class="slider-title">{title}</h3>
+  <div class="before-after-slider">
+    <div class="image-container">
+      <img src={beforeImage} alt={`${altText} - Before`} class="before-image" />
+      <div class="after-container">
+        <img src={afterImage} alt={`${altText} - After`} class="after-image" />
+      </div>
+      <div class="slider-handle">
+        <div class="handle-bar"></div>
+        <div class="handle-circle">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M7 12L2 7M2 7L7 2M2 7H22M17 12L22 17M22 17L17 22M22 17H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="labels">
+        <span class="label label-before">Before</span>
+        <span class="label label-after">After</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script define:vars={{ sliderId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector(`[data-slider-id="${sliderId}"]`);
+    if (!container) return;
+    
+    const slider = container.querySelector('.before-after-slider');
+    const handle = container.querySelector('.slider-handle');
+    const afterContainer = container.querySelector('.after-container');
+    
+    let isDragging = false;
+    
+    function updateSliderPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      const position = Math.max(0, Math.min(x - rect.left, rect.width));
+      const percentage = (position / rect.width) * 100;
+      
+      handle.style.left = `${percentage}%`;
+      afterContainer.style.width = `${percentage}%`;
+    }
+    
+    function startDragging(e) {
+      isDragging = true;
+      e.preventDefault();
+      updateSliderPosition(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+    }
+    
+    function stopDragging() {
+      isDragging = false;
+    }
+    
+    function onMove(e) {
+      if (!isDragging) return;
+      updateSliderPosition(e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+    }
+    
+    // Mouse events
+    handle.addEventListener('mousedown', startDragging);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', stopDragging);
+    
+    // Touch events
+    handle.addEventListener('touchstart', startDragging);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', stopDragging);
+    
+    // Click to position
+    slider.addEventListener('click', (e) => {
+      if (e.target !== handle && !handle.contains(e.target)) {
+        updateSliderPosition(e.clientX);
+      }
+    });
+  });
+</script>
+
+<style>
+  .before-after-container {
+    margin: 2rem auto;
+    max-width: 500px;
+  }
+
+  .slider-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--deep-brown);
+    margin-bottom: 1.5rem;
+  }
+
+  .before-after-slider {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(74, 53, 40, 0.15);
+    cursor: ew-resize;
+    user-select: none;
+  }
+
+  .image-container {
+    position: relative;
+    line-height: 0;
+  }
+
+  .before-image,
+  .after-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .after-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .after-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+  }
+
+  .slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+    z-index: 10;
+  }
+
+  .handle-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .handle-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 3px solid var(--muted-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: var(--deep-brown);
+    transition: all var(--transition-fast);
+  }
+
+  .slider-handle:hover .handle-circle {
+    background: var(--muted-gold);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .labels {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .label {
+    padding: 8px 16px;
+    background: rgba(74, 53, 40, 0.8);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .label-after {
+    background: rgba(212, 175, 55, 0.9);
+  }
+
+  @media (max-width: 768px) {
+    .slider-title {
+      font-size: 1.5rem;
+    }
+
+    .before-after-slider {
+      margin: 0 1rem;
+    }
+
+    .handle-circle {
+      width: 36px;
+      height: 36px;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+</style>

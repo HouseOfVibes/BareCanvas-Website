@@ -3,7 +3,9 @@
     <div class="footer-content">
       <div class="footer-section">
         <div class="footer-brand">
-          <img src="/images/logo.png" alt="BareCanvas" class="footer-logo" />
+          <div class="footer-logo-container">
+            <img src="/images/logo.png" alt="BareCanvas" class="footer-logo" />
+          </div>
           <h4>BareCanvas</h4>
           <p>Professional waxing services in Pearland, Texas</p>
         </div>
@@ -83,12 +85,27 @@
     max-width: 280px;
   }
 
+  .footer-logo-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--warm-cream);
+    margin-bottom: 1rem;
+    transition: all var(--transition-fast);
+  }
+
   .footer-logo {
     width: 50px;
     height: 50px;
     object-fit: contain;
-    margin-bottom: 1rem;
-    filter: brightness(0) invert(1);
+  }
+
+  .footer-logo-container:hover {
+    background: var(--cream-accents);
+    transform: scale(1.05);
   }
 
   .footer-brand h4 {

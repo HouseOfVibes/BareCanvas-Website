@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import BeforeAfterSlider from '../components/BeforeAfterSlider.astro';
 ---
 
 <Layout 
@@ -74,6 +75,41 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Before & After Results Section -->
+  <section class="section results-section">
+    <div class="container">
+      <div class="results-header animate-on-scroll fade-up">
+        <h2 class="section-title">Transformative Results</h2>
+        <p class="section-subtitle">See the professional difference in our actual client results</p>
+      </div>
+      
+      <div class="results-grid">
+        <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+          <BeforeAfterSlider
+            beforeImage="/images/BareCanvas-Before-After-Eyebrow/BareCanvas-Before-Eyebrow.png"
+            afterImage="/images/BareCanvas-Before-After-Eyebrow/BareCanvas-After-Eyebrow.png"
+            altText="Eyebrow Waxing Results"
+            title="Professional Eyebrow Shaping"
+          />
+        </div>
+        
+        <div class="result-item animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+          <BeforeAfterSlider
+            beforeImage="/images/BareCanvas-Before-After-UnderArm/BareCanvas-After-UnderArm.png"
+            afterImage="/images/BareCanvas-Before-After-UnderArm/BareCanvas-Before-UnderArm.png"
+            altText="Underarm Waxing Results"
+            title="Smooth Underarm Treatment"
+          />
+        </div>
+      </div>
+      
+      <div class="results-cta animate-on-scroll fade-up">
+        <p class="results-note">Results from actual BareCanvas clients. Individual results may vary.</p>
+        <a href="/services" class="btn btn-gold">View Our Services</a>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
   <section class="section" id="about">
     <div class="container">
@@ -98,8 +134,9 @@ import Layout from '../layouts/Layout.astro';
   <section class="section section-accent">
     <div class="container">
       <h2 class="section-title animate-on-scroll fade-up">Why Choose BareCanvas</h2>
+      <p class="section-subtitle animate-on-scroll fade-up">Professional Expertise & Services</p>
       <div class="grid grid-3">
-        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.1s;">
+        <div class="expertise-card animate-on-scroll slide-up-card" style="animation-delay: 0.1s;">
           <div class="feature-icon">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="25" cy="25" r="20" stroke="var(--muted-gold)" stroke-width="2"/>
@@ -110,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
           <p>Licensed esthetician with specialized training in advanced waxing techniques for all skin types.</p>
         </div>
 
-        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.2s;">
+        <div class="expertise-card animate-on-scroll slide-up-card" style="animation-delay: 0.2s;">
           <div class="feature-icon">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M25 5 L30 18 L43 18 L33 28 L38 41 L25 33 L12 41 L17 28 L7 18 L20 18 Z" stroke="var(--muted-gold)" stroke-width="2" fill="var(--cream-accents)"/>
@@ -120,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
           <p>We use only the highest quality waxes and aftercare products for optimal results and comfort.</p>
         </div>
 
-        <div class="card animate-on-scroll scale-in" style="animation-delay: 0.3s;">
+        <div class="expertise-card animate-on-scroll slide-up-card" style="animation-delay: 0.3s;">
           <div class="feature-icon">
             <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <rect x="10" y="15" width="30" height="25" rx="5" stroke="var(--muted-gold)" stroke-width="2" fill="none"/>
@@ -137,26 +174,32 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Testimonials Section -->
-  <section class="section">
+  <section class="section testimonials-section">
     <div class="container">
-      <h2 class="section-title animate-on-scroll fade-up">What Our Clients Say</h2>
-      <div class="grid grid-3">
-        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+      <div class="testimonials-header">
+        <h2 class="section-title animate-on-scroll fade-up">What Our Clients Say</h2>
+        <p class="section-subtitle animate-on-scroll fade-up">Real experiences from real clients</p>
+      </div>
+      <div class="grid grid-3 testimonials-grid">
+        <div class="testimonial-card animate-on-scroll fade-up" style="animation-delay: 0.1s;">
+          <div class="quote-icon">"</div>
           <div class="testimonial-stars">★★★★★</div>
-          <p>"Professional, clean, and so comfortable. Priscilla made me feel at ease from the moment I walked in. Best waxing experience I've ever had!"</p>
-          <cite>— Sarah M.</cite>
+          <p class="testimonial-text">"Professional, clean, and so comfortable. Priscilla made me feel at ease from the moment I walked in. Best waxing experience I've ever had!"</p>
+          <cite class="testimonial-author">— Sarah M.</cite>
         </div>
 
-        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+        <div class="testimonial-card animate-on-scroll fade-up" style="animation-delay: 0.2s;">
+          <div class="quote-icon">"</div>
           <div class="testimonial-stars">★★★★★</div>
-          <p>"I was nervous about my first Brazilian, but Priscilla explained everything and made the whole process comfortable. I'm so glad I found BareCanvas!"</p>
-          <cite>— Jennifer L.</cite>
+          <p class="testimonial-text">"I was nervous about my first Brazilian, but Priscilla explained everything and made the whole process comfortable. I'm so glad I found BareCanvas!"</p>
+          <cite class="testimonial-author">— Jennifer L.</cite>
         </div>
 
-        <div class="card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+        <div class="testimonial-card animate-on-scroll fade-up" style="animation-delay: 0.3s;">
+          <div class="quote-icon">"</div>
           <div class="testimonial-stars">★★★★★</div>
-          <p>"Exceptional service and results. The attention to detail and professional approach keeps me coming back. Highly recommend!"</p>
-          <cite>— Maria K.</cite>
+          <p class="testimonial-text">"Exceptional service and results. The attention to detail and professional approach keeps me coming back. Highly recommend!"</p>
+          <cite class="testimonial-author">— Maria K.</cite>
         </div>
       </div>
     </div>
@@ -255,6 +298,70 @@ import Layout from '../layouts/Layout.astro';
     background: var(--light-beige);
   }
 
+  /* Expertise Cards with new animation */
+  .expertise-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(74, 53, 40, 0.08);
+    border: 1px solid rgba(196, 163, 115, 0.2);
+    transition: all var(--transition-fast);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: var(--muted-gold);
+    transition: left 0.5s ease;
+  }
+
+  .expertise-card:hover::before {
+    left: 0;
+  }
+
+  .expertise-card:hover {
+    transform: translateY(-8px) rotateX(5deg);
+    box-shadow: 0 15px 40px rgba(74, 53, 40, 0.15);
+  }
+
+  .expertise-card h3 {
+    color: var(--deep-brown);
+    font-family: var(--font-heading);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .expertise-card p {
+    color: var(--warm-brown);
+    line-height: 1.6;
+  }
+
+  .slide-up-card {
+    opacity: 0;
+    transform: translateY(60px) rotateX(-10deg);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-up-card.animate-in {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+
+  .expertise-card .feature-icon {
+    transition: transform 0.5s ease;
+  }
+
+  .expertise-card:hover .feature-icon {
+    transform: rotateY(360deg) scale(1.1);
+  }
+
   .service-price {
     font-size: 1.25rem;
     font-weight: 600;
@@ -262,10 +369,101 @@ import Layout from '../layouts/Layout.astro';
     margin-top: 1rem;
   }
 
+  /* Testimonials Section */
+  .testimonials-section {
+    background: linear-gradient(135deg, var(--warm-cream) 0%, var(--light-beige) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.2rem;
+    color: var(--warm-brown);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  .testimonials-grid {
+    position: relative;
+  }
+
+  .testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(74, 53, 40, 0.1);
+    border: 1px solid rgba(196, 163, 115, 0.2);
+    transition: all var(--transition-fast);
+    position: relative;
+    text-align: center;
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(74, 53, 40, 0.15);
+    border-color: var(--muted-gold);
+  }
+
+  .quote-icon {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--muted-gold);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
   .testimonial-stars {
     color: var(--muted-gold);
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    display: inline-block;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  .testimonial-text {
+    color: var(--warm-brown);
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .testimonial-author {
+    color: var(--deep-brown);
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+    margin-top: 1rem;
+    position: relative;
+  }
+
+  .testimonial-author::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background: var(--muted-gold);
   }
 
   .lead {
@@ -273,6 +471,74 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 400;
     color: var(--deep-brown);
     margin-bottom: 2rem;
+  }
+
+  /* Results Section */
+  .results-section {
+    background: linear-gradient(135deg, var(--warm-cream) 0%, var(--light-beige) 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .results-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .results-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(196, 163, 115, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .results-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .result-item {
+    position: relative;
+  }
+
+  .results-cta {
+    text-align: center;
+  }
+
+  .results-note {
+    color: var(--warm-brown);
+    font-style: italic;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .results-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .results-section {
+      padding: 3rem 0;
+    }
   }
 
   .text-center {
