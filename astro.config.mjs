@@ -1,8 +1,16 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://barecanvas.com', // Update with actual domain when available
-  integrations: [sitemap()],
+  site: 'https://barecanvastx.com',
+  integrations: [
+    sitemap(),
+    partytown({
+      config: {
+        forward: ['dataLayer.push', 'gtag'],
+      },
+    }),
+  ],
 });

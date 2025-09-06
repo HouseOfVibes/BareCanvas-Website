@@ -1,0 +1,240 @@
+---
+// Google Analytics 4 with Privacy Controls for BareCanvas
+// Replace 'G-XXXXXXXXXX' with your actual GA4 Measurement ID
+const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+---
+
+<!-- Google Analytics 4 with Privacy-First Implementation -->
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Set default consent state (denied by default for privacy)
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+
+  gtag('js', new Date());
+  
+  // Configure Google Analytics
+  gtag('config', '${GA_MEASUREMENT_ID}', {
+    // Privacy-focused configuration
+    'anonymize_ip': true,
+    'respect_dnt': true,
+    'allow_google_signals': false,
+    'allow_ad_personalization_signals': false,
+    
+    // Custom dimensions for BareCanvas business insights
+    'custom_map': {
+      'custom_dimension_1': 'service_interest',
+      'custom_dimension_2': 'appointment_stage',
+      'custom_dimension_3': 'user_journey'
+    }
+  });
+
+  // Listen for cookie consent updates
+  window.addEventListener('cookieConsentUpdate', function(e) {
+    const consentData = e.detail;
+    
+    gtag('consent', 'update', {
+      'analytics_storage': consentData.analytics ? 'granted' : 'denied',
+      'ad_storage': consentData.marketing ? 'granted' : 'denied',
+      'ad_user_data': consentData.marketing ? 'granted' : 'denied',
+      'ad_personalization': consentData.marketing ? 'granted' : 'denied'
+    });
+  });
+
+  // Custom tracking functions for BareCanvas business goals
+  window.trackServiceInterest = function(serviceName) {
+    gtag('event', 'service_interest', {
+      'service_name': serviceName,
+      'custom_dimension_1': serviceName,
+      'event_category': 'engagement',
+      'event_label': serviceName
+    });
+  };
+
+  window.trackAppointmentStep = function(step, service = null) {
+    gtag('event', 'appointment_progress', {
+      'appointment_step': step,
+      'service_type': service,
+      'custom_dimension_2': step,
+      'event_category': 'conversion',
+      'event_label': step + (service ? ' - ' + service : '')
+    });
+  };
+
+  window.trackFormSubmission = function(formType, success = true) {
+    gtag('event', success ? 'form_submit' : 'form_error', {
+      'form_type': formType,
+      'success': success,
+      'event_category': 'lead_generation',
+      'event_label': formType
+    });
+  };
+
+  window.trackPhoneClick = function() {
+    gtag('event', 'phone_click', {
+      'event_category': 'contact',
+      'event_label': 'header_phone'
+    });
+  };
+
+  window.trackEmailClick = function() {
+    gtag('event', 'email_click', {
+      'event_category': 'contact',
+      'event_label': 'footer_email'
+    });
+  };
+
+  // Track page-specific business events
+  window.trackBusinessEvent = function(eventName, parameters = {}) {
+    gtag('event', eventName, {
+      'event_category': 'business_interaction',
+      ...parameters
+    });
+  };
+
+  // Enhanced E-commerce tracking for potential future booking system
+  window.trackServiceView = function(serviceName, price = null) {
+    gtag('event', 'view_item', {
+      'currency': 'USD',
+      'value': price,
+      'items': [{
+        'item_id': serviceName.toLowerCase().replace(/\s+/g, '_'),
+        'item_name': serviceName,
+        'item_category': 'waxing_service',
+        'price': price
+      }]
+    });
+  };
+
+  // Scroll depth tracking for engagement insights
+  let scrollDepths = [25, 50, 75, 90];
+  let scrollDepthsReached = [];
+
+  function trackScrollDepth() {
+    const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+    
+    scrollDepths.forEach(depth => {
+      if (scrollPercent >= depth && !scrollDepthsReached.includes(depth)) {
+        scrollDepthsReached.push(depth);
+        gtag('event', 'scroll', {
+          'event_category': 'engagement',
+          'event_label': depth + '%',
+          'value': depth
+        });
+      }
+    });
+  }
+
+  // Initialize scroll tracking
+  let scrollTimeout;
+  window.addEventListener('scroll', function() {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(trackScrollDepth, 100);
+  });
+
+  // Track time on page for engagement metrics
+  let startTime = Date.now();
+  let timeIntervals = [30, 60, 120, 300]; // 30s, 1m, 2m, 5m
+  let timeIntervalsReached = [];
+
+  setInterval(function() {
+    let timeOnPage = Math.floor((Date.now() - startTime) / 1000);
+    
+    timeIntervals.forEach(interval => {
+      if (timeOnPage >= interval && !timeIntervalsReached.includes(interval)) {
+        timeIntervalsReached.push(interval);
+        gtag('event', 'time_on_page', {
+          'event_category': 'engagement',
+          'event_label': interval + 's',
+          'value': interval
+        });
+      }
+    });
+  }, 10000); // Check every 10 seconds
+
+  console.log('BareCanvas Analytics initialized with privacy controls');
+</script>
+
+<!-- Enhanced tracking for specific page elements -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track phone number clicks
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof trackPhoneClick === 'function') {
+          trackPhoneClick();
+        }
+      });
+    });
+
+    // Track email clicks
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof trackEmailClick === 'function') {
+          trackEmailClick();
+        }
+      });
+    });
+
+    // Track service button clicks
+    document.querySelectorAll('[data-service]').forEach(function(element) {
+      element.addEventListener('click', function() {
+        const serviceName = this.dataset.service;
+        if (typeof trackServiceInterest === 'function') {
+          trackServiceInterest(serviceName);
+        }
+      });
+    });
+
+    // Track form submissions
+    document.querySelectorAll('form').forEach(function(form) {
+      form.addEventListener('submit', function(e) {
+        const formType = this.dataset.formType || 'contact_form';
+        if (typeof trackFormSubmission === 'function') {
+          trackFormSubmission(formType);
+        }
+      });
+    });
+
+    // Track external link clicks
+    document.querySelectorAll('a[href^="http"]:not([href*="' + window.location.hostname + '"])').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click', {
+            'event_category': 'outbound',
+            'event_label': this.href,
+            'transport_type': 'beacon'
+          });
+        }
+      });
+    });
+
+    // Track downloads (PDFs, documents, etc.)
+    document.querySelectorAll('a[href$=".pdf"], a[href$=".doc"], a[href$=".docx"], a[href*="download"]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'file_download', {
+            'event_category': 'engagement',
+            'event_label': this.href,
+            'transport_type': 'beacon'
+          });
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Hide analytics debugging in production */
+  .gtag-debug {
+    display: none;
+  }
+</style>
