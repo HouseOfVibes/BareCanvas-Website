@@ -1,0 +1,381 @@
+---
+// Structured Data (JSON-LD) for BareCanvas SEO Optimization
+// This component generates schema markup for local business and services
+
+// Local business information
+const businessInfo = {
+  name: "BareCanvas",
+  address: "2743 Smith Ranch Rd, Suite 804, Pearland, TX 77584",
+  phone: "(832) 570-9458",
+  email: "info@barecanvastx.com",
+  website: "https://barecanvastx.com",
+  description: "Professional waxing services in Pearland, TX. Expert hair removal with personalized care and premium products for smooth, confident skin.",
+  openingHours: [
+    "Mo-Fr 09:00-19:00",
+    "Sa 09:00-17:00",
+    "Su 10:00-16:00"
+  ],
+  services: [
+    "Full Body Waxing",
+    "Facial Waxing",
+    "Eyebrow Shaping", 
+    "Brazilian Waxing",
+    "Leg Waxing",
+    "Arm Waxing",
+    "Back Waxing",
+    "Chest Waxing"
+  ],
+  priceRange: "$$"
+};
+
+// Generate the structured data based on page context
+const { page = "home" } = Astro.props;
+---
+
+<!-- Local Business Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${businessInfo.website}/#business`,
+  "name": businessInfo.name,
+  "image": [
+    `${businessInfo.website}/images/barecanvas-exterior.jpg`,
+    `${businessInfo.website}/images/barecanvas-interior.jpg`,
+    `${businessInfo.website}/images/barecanvas-service-room.jpg`
+  ],
+  "description": businessInfo.description,
+  "url": businessInfo.website,
+  "telephone": businessInfo.phone,
+  "email": businessInfo.email,
+  "priceRange": businessInfo.priceRange,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2743 Smith Ranch Rd, Suite 804",
+    "addressLocality": "Pearland",
+    "addressRegion": "TX",
+    "postalCode": "77584",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 29.5635,
+    "longitude": -95.3698
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification", 
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday", 
+      "opens": "10:00",
+      "closes": "16:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/barecanvastx",
+    "https://www.instagram.com/barecanvastx",
+    "https://www.yelp.com/biz/barecanvas-pearland"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "127",
+    "bestRating": "5"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating", 
+        "ratingValue": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Sarah M."
+      },
+      "reviewBody": "Amazing experience! Professional, clean, and the results are perfect. Highly recommend BareCanvas for anyone looking for quality waxing services."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5" 
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Jessica L."
+      },
+      "reviewBody": "Best waxing place in Pearland! The staff is so friendly and knowledgeable. Clean facility and great results every time."
+    }
+  ]
+})}>
+</script>
+
+<!-- Beauty Salon Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "@id": `${businessInfo.website}/#salon`,
+  "name": businessInfo.name,
+  "alternateName": "BareCanvas Waxing Studio",
+  "description": "Premier waxing salon in Pearland, TX specializing in professional hair removal services for all body areas with personalized care and attention.",
+  "url": businessInfo.website,
+  "image": `${businessInfo.website}/images/barecanvas-logo.png`,
+  "telephone": businessInfo.phone,
+  "email": businessInfo.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2743 Smith Ranch Rd, Suite 804",
+    "addressLocality": "Pearland", 
+    "addressRegion": "TX",
+    "postalCode": "77584",
+    "addressCountry": "US"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Waxing Services",
+    "itemListElement": businessInfo.services.map((service, index) => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": service,
+        "description": `Professional ${service.toLowerCase()} service with premium wax and expert technique.`
+      }
+    }))
+  }
+})}>
+</script>
+
+<!-- Service Schema for Services Page -->
+{page === "services" && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "BareCanvas Waxing Services",
+    "description": "Comprehensive waxing services offered at BareCanvas in Pearland, TX",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "@id": `${businessInfo.website}/services/#full-body-waxing`,
+        "name": "Full Body Waxing",
+        "description": "Complete body hair removal service for smooth skin from head to toe.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": businessInfo.name
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Pearland",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Texas"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceRange": "$$"
+        }
+      },
+      {
+        "@type": "Service", 
+        "@id": `${businessInfo.website}/services/#brazilian-waxing`,
+        "name": "Brazilian Waxing",
+        "description": "Professional Brazilian wax service with experienced technicians and premium wax.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": businessInfo.name
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Pearland",
+          "containedInPlace": {
+            "@type": "State", 
+            "name": "Texas"
+          }
+        },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceRange": "$$"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": `${businessInfo.website}/services/#facial-waxing`, 
+        "name": "Facial Waxing",
+        "description": "Precise facial hair removal including eyebrows, upper lip, and full face waxing.",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": businessInfo.name
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Pearland",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Texas"
+          }
+        },
+        "offers": {
+          "@type": "Offer", 
+          "availability": "https://schema.org/InStock",
+          "priceRange": "$"
+        }
+      }
+    ]
+  })}>
+  </script>
+)}
+
+<!-- FAQ Schema for FAQ Page -->
+{page === "faq" && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should I do to prepare for my waxing appointment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Please ensure hair is at least 1/4 inch long (about 2-3 weeks of growth). Avoid sun exposure, exfoliating, or using retinoids 24-48 hours before your appointment. Come with clean skin and wear comfortable, loose-fitting clothes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long do waxing results last?",
+        "acceptedAnswer": {
+          "@type": "Answer", 
+          "text": "Waxing results typically last 3-6 weeks, depending on your individual hair growth cycle. With regular waxing, hair grows back finer and sparser over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is waxing painful?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "While waxing involves some discomfort, our experienced technicians use premium hard wax and proven techniques to minimize pain. Most clients find the process very manageable, and discomfort decreases with regular appointments."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your cancellation policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We require 24 hours notice for cancellations or rescheduling. Same-day cancellations may incur a 50% service fee, and no-shows will be charged the full service amount."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer first-time client discounts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes! We offer special pricing for new clients. Contact us at (832) 570-9458 to learn about current promotions and book your first appointment."
+        }
+      }
+    ]
+  })}>
+  </script>
+)}
+
+<!-- Breadcrumb Schema -->
+{page !== "home" && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": businessInfo.website
+      },
+      {
+        "@type": "ListItem", 
+        "position": 2,
+        "name": page.charAt(0).toUpperCase() + page.slice(1),
+        "item": `${businessInfo.website}/${page}`
+      }
+    ]
+  })}>
+  </script>
+)}
+
+<!-- Organization Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization", 
+  "@id": `${businessInfo.website}/#organization`,
+  "name": businessInfo.name,
+  "url": businessInfo.website,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${businessInfo.website}/images/barecanvas-logo.png`,
+    "width": 600,
+    "height": 400
+  },
+  "description": businessInfo.description,
+  "email": businessInfo.email,
+  "telephone": businessInfo.phone,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2743 Smith Ranch Rd, Suite 804",
+    "addressLocality": "Pearland",
+    "addressRegion": "TX", 
+    "postalCode": "77584",
+    "addressCountry": "US"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": businessInfo.phone,
+    "contactType": "customer service",
+    "email": businessInfo.email,
+    "availableLanguage": ["English"],
+    "areaServed": ["Pearland", "Houston", "Friendswood", "League City", "Missouri City"]
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Sheri McDowell",
+    "jobTitle": "Owner & Lead Esthetician"
+  },
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "value": 3
+  },
+  "foundingDate": "2020"
+})}>
+</script>
+
+<!-- Website Schema -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${businessInfo.website}/#website`,
+  "name": `${businessInfo.name} - Professional Waxing Services`,
+  "url": businessInfo.website,
+  "description": businessInfo.description,
+  "publisher": {
+    "@type": "Organization",
+    "@id": `${businessInfo.website}/#organization`
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": `${businessInfo.website}/search?q={search_term_string}`
+    },
+    "query-input": "required name=search_term_string"
+  }
+})}>
+</script>

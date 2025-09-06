@@ -4,7 +4,8 @@ import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
 import CookieConsent from '../components/CookieConsent.astro';
 import Analytics from '../components/Analytics.astro';
-const { title, description, image, author, type } = Astro.props;
+import StructuredData from '../components/StructuredData.astro';
+const { title, description, image, author, type, page } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,6 +20,7 @@ const { title, description, image, author, type } = Astro.props;
       author={author}
       type={type}
     />
+    <StructuredData page={page} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
